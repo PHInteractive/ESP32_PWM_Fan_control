@@ -12,8 +12,6 @@ int PWM_Speed_Percent = 50; //PWM Speed used on startup/restart
 
 
 void setup() {
-  Serial.begin(115200);
-  //OLED.clearDisplay();  	//clear OLED in case of restart/reset
   ledcSetup(0,25000, 10); //setup PWM on channel 0, 25kHz switching frequency, 10bit resolution (0-1024)
   ledcAttachPin(33, 0);   //Use GPIO33 as Output on channel 0
   pinMode(18, INPUT_PULLUP);  //pin for PWM Down
